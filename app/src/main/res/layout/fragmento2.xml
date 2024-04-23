@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#fed7aa"
+    android:orientation="vertical"
+    tools:context="com.example.exemplofragmento.Fragmento1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hoje"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Outra Data"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/texto_frg2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:hint="Compromissos"
+            android:padding="16dp"/>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

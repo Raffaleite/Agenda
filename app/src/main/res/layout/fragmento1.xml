@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ddd6fe"
+    android:orientation="vertical"
+    tools:context="com.example.exemplofragmento.Fragmento1">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hora"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descrição"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="16dp" />
+
+
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Almoço"
+        android:inputType="text"
+        android:minLines="3"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK" />
+    </LinearLayout>
+
+</LinearLayout>
