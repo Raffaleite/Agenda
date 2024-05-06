@@ -6,15 +6,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
+
 
 import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
-
-public class FragmentoDatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener {
+public class FragmentoOtherDatePicker extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     int dia, mes, ano;
     String data;
 
@@ -32,9 +31,6 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
         return new DatePickerDialog(requireContext(), this, year, month, day);
 
     }
-
-
-
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
@@ -56,7 +52,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
             txt.setText("");
             txt.setTextColor(Color.argb(0,0,0,0));
 
-            Log.d("prints", "Data: " + data);
+            Log.d("prints", "OutraData: " + data);
 
         }
     }
@@ -85,4 +81,5 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
     public void setAno(int ano) {
         this.ano = ano;
     }
+
 }

@@ -1,5 +1,6 @@
 package com.example.exemplofragmento;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -20,7 +21,6 @@ public class Fragmento1 extends Fragment {
     private Button Botao1;
     private Button Botao2;
     private Button Botao3;
-    private Button Botao4;
     private TextView texto1;
     private View v;
 
@@ -42,9 +42,10 @@ public class Fragmento1 extends Fragment {
         Botao1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 1");
+                Log.d("prints", "botão data");
                 DialogFragment fragmentoData = new FragmentoDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
+
 
             }
         });
@@ -53,10 +54,11 @@ public class Fragmento1 extends Fragment {
         Botao2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 2");
+                Log.d("prints", "botão hora");
                 DialogFragment fragmentoTime = new FragmentoTimePicker();
                 fragmentoTime.show(getParentFragmentManager(), "timePicker");
-                
+
+
             }
         });
 
@@ -66,25 +68,30 @@ public class Fragmento1 extends Fragment {
         texto1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "texto 1");
+                Log.d("prints", "descrição");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
-
-
-
+                if (txt != null) txt.append(
+                        String.valueOf(texto1.getText())
+                );
+                Log.d("prints", "Descrição: " + texto1.getText());
             }
         });
+
 
         Botao3 = (Button) v.findViewById(R.id.button3);
         Botao3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("prints", "botao 3");
+
+                Log.d("prints", "botao Ok");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
-                if (txt != null) txt.setText(
-                        String.valueOf(texto1.getText())
-                );
+
+                txt.setTextColor(Color.BLACK);
+
             }
         });
+
+
 
         return v;
     }

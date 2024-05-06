@@ -13,4 +13,8 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="EditTextTransparente" parent="Widget.AppCompat.EditText">
+        <item name="android:textColor">#00FFFFFF</item> <!-- Define a cor do texto como totalmente transparente -->
+    </style>
 </resources>
