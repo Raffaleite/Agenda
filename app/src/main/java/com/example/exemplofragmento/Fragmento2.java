@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
@@ -35,7 +38,18 @@ public class Fragmento2 extends Fragment {
             public void onClick(View view) {
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
                 txt.setText("");
-                txt.setTextColor(Color.argb(0,0,0,0));
+                Date currentDate = new Date();
+
+                String timeZoneID = "America/Sao_Paulo";
+                TimeZone timeZone = TimeZone.getTimeZone(timeZoneID);
+
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                sdf.setTimeZone(timeZone);
+                String formattedDate = sdf.format(currentDate);
+
+                txt.setTextColor(Color.BLACK);
+                txt.setText(formattedDate);
+
 
             }
         });
@@ -46,8 +60,6 @@ public class Fragmento2 extends Fragment {
             public void onClick(View view) {
                 DialogFragment fragmentoData = new FragmentoOtherDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
-
-
 
             }
         });

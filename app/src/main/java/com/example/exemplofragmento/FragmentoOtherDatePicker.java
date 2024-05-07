@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import java.text.DateFormat;
+import java.util.Date;
 
 
 import androidx.fragment.app.DialogFragment;
@@ -50,7 +52,10 @@ public class FragmentoOtherDatePicker extends DialogFragment implements DatePick
                     "/" + String.valueOf(mes) +
                     "/" + String.valueOf(ano);
             txt.setText("");
-            txt.setTextColor(Color.argb(0,0,0,0));
+            txt.setTextColor(Color.BLACK);
+            txt.append(" ");
+            txt.append(data);
+            txt.append(" ");
 
             Log.d("prints", "OutraData: " + data);
 
