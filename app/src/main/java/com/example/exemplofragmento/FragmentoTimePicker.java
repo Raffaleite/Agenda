@@ -51,9 +51,13 @@ public class FragmentoTimePicker extends DialogFragment
             Log.d("prints", "Horário: " + time);
 
         }
+    }
 
+    public String getTime() {
+        return time;
+    }
 
-
-
+    public void setTime(int data) {
+        this.time = String.valueOf(data);
     }
 }

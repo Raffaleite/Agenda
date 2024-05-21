@@ -11,18 +11,19 @@ import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
-import org.w3c.dom.Text;
-
-// Repositório com exemplo de Fragmentos estáticos
 
 public class Fragmento1 extends Fragment {
     private Button Botao1;
     private Button Botao2;
     private Button Botao3;
     private TextView texto1;
+    private String descricao;
     private View v;
+
+
+    CompromissosDB mCompromissoDB;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,6 +46,8 @@ public class Fragmento1 extends Fragment {
                 Log.d("prints", "botão data");
                 DialogFragment fragmentoData = new FragmentoDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
+
+
 
 
             }
@@ -73,9 +76,13 @@ public class Fragmento1 extends Fragment {
                 if (txt != null) txt.append(
                         String.valueOf(texto1.getText())
                 );
+                descricao = (String) texto1.getText();
                 Log.d("prints", "Descrição: " + texto1.getText());
             }
         });
+
+
+
 
 
         Botao3 = (Button) v.findViewById(R.id.button3);
@@ -92,5 +99,13 @@ public class Fragmento1 extends Fragment {
         });
 
         return v;
+    }
+
+    public String getDescription() {
+        return descricao;
+    }
+
+    public void setDescription(String descricao) {
+        this.descricao = String.valueOf(descricao);
     }
 }

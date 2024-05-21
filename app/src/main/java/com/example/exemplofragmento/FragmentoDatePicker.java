@@ -6,7 +6,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
@@ -62,27 +61,12 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
     }
 
 
-    public int getDia() {
-        return dia;
+    public String getDate() {
+        return data;
     }
 
-    public void setDia(int dia) {
-        this.dia = dia;
+    public void setDate(int data) {
+        this.data = String.valueOf(data);
     }
 
-    public int getMes() {
-        return mes;
-    }
-
-    public void setMes(int mes) {
-        this.mes = mes;
-    }
-
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
 }
