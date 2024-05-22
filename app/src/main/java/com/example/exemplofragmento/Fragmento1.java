@@ -15,12 +15,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class Fragmento1 extends Fragment {
-    private Button Botao1;
-    private Button Botao2;
+    private Button Botao1; // data
+    private Button Botao2; // hora
     private Button Botao3;
     private TextView texto1;
     private String descricao;
     private View v;
+
+
+
 
 
     CompromissosDB mCompromissoDB;
@@ -44,9 +47,12 @@ public class Fragmento1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("prints", "botão data");
-                DialogFragment fragmentoData = new FragmentoDatePicker();
+                FragmentoDatePicker fragmentoData = new FragmentoDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
-
+                TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg3);
+                if (txt != null) txt.append(
+                        fragmentoData.getDate()
+                );
 
 
 
@@ -58,9 +64,12 @@ public class Fragmento1 extends Fragment {
             @Override
             public void onClick(View view) {
                 Log.d("prints", "botão hora");
-                DialogFragment fragmentoTime = new FragmentoTimePicker();
+                FragmentoTimePicker fragmentoTime = new FragmentoTimePicker();
                 fragmentoTime.show(getParentFragmentManager(), "timePicker");
-
+                TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg4);
+                if (txt != null) txt.append(
+                        fragmentoTime.getTime()
+                );
 
             }
         });
@@ -76,7 +85,6 @@ public class Fragmento1 extends Fragment {
                 if (txt != null) txt.append(
                         String.valueOf(texto1.getText())
                 );
-                descricao = (String) texto1.getText();
                 Log.d("prints", "Descrição: " + texto1.getText());
             }
         });
@@ -94,6 +102,8 @@ public class Fragmento1 extends Fragment {
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
 
                 txt.setTextColor(Color.BLACK);
+
+                Log.d("prints", "Cheguei: ");
 
             }
         });

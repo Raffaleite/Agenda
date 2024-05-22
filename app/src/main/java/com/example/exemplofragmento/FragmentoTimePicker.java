@@ -39,6 +39,7 @@ public class FragmentoTimePicker extends DialogFragment
         minuto = minute;
 
         TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
+        //inserir hora no banco
 
         if (txt != null){
             time = String.valueOf(hora) +
@@ -57,7 +58,5 @@ public class FragmentoTimePicker extends DialogFragment
         return time;
     }
 
-    public void setTime(int data) {
-        this.time = String.valueOf(data);
     }
-}
+

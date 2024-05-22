@@ -19,6 +19,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
 
     private View v;
 
+
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
@@ -46,6 +47,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
 
 
         TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
+        //inserir no banco a data
 
         if (txt != null) {
 
@@ -65,8 +67,6 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
         return data;
     }
 
-    public void setDate(int data) {
-        this.data = String.valueOf(data);
-    }
+
 
 }
