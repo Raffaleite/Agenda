@@ -42,27 +42,20 @@ public class FragmentoTimePicker extends DialogFragment
         //inserir hora no banco
 
         if (txt != null){
-            time = hora +
-                    ":" + minuto;
-
-            this.setTime(time);
+            time = String.valueOf(hora) +
+                    ":" + String.valueOf(minuto);
 
             txt.append(" ");
-            txt.append(this.getTime());
+            txt.append(time);
             txt.append(" ");
 
-            Log.d("prints", "Horário: " + this.getTime());
+            Log.d("prints", "Horário: " + time);
 
         }
-
     }
 
     public String getTime() {
         return time;
-    }
-
-    public void setTime(String data) {
-        this.time = data;
     }
 
     }

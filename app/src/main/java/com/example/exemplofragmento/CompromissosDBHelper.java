@@ -5,8 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.NonNull;
-
 public class CompromissosDBHelper extends SQLiteOpenHelper{
 
     private static final int VERSAO = 1;
@@ -17,7 +15,7 @@ public class CompromissosDBHelper extends SQLiteOpenHelper{
 
 
     @Override
-    public void onCreate(@NonNull SQLiteDatabase db) {
+    public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE "+ CompromissosDBSchema .CompromissosTbl.NOME+ "("+
                 "_id integer PRIMARY KEY autoincrement,"+
                 CompromissosDBSchema .CompromissosTbl.Cols.DATA+ ","+
@@ -26,7 +24,7 @@ public class CompromissosDBHelper extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onUpgrade(@NonNull SQLiteDatabase db, int versaoAntiga, int novaVersao) {
+    public void onUpgrade(SQLiteDatabase db, int versaoAntiga, int novaVersao) {
         // Política de upgrade é simplesmente descartar o conteúdo e começar novamente
         db.execSQL("DROP TABLE IF EXISTS " + CompromissosDBSchema .CompromissosTbl.NOME);
         onCreate(db);

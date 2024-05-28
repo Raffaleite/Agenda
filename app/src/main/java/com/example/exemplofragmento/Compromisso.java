@@ -21,11 +21,11 @@ public class Compromisso {
         this.id = id;
     }
 
-    public String getData() {
+    public String getDate() {
         return date;
     }
 
-    public void setData(String date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
