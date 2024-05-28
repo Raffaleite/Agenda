@@ -22,10 +22,6 @@ public class Fragmento1 extends Fragment {
     private String descricao;
     private View v;
 
-
-
-
-
     CompromissosDB mCompromissoDB;
 
     @Override
@@ -49,10 +45,8 @@ public class Fragmento1 extends Fragment {
                 Log.d("prints", "botão data");
                 FragmentoDatePicker fragmentoData = new FragmentoDatePicker();
                 fragmentoData.show(getParentFragmentManager(), "datePicker");
-                TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg3);
-                if (txt != null) txt.append(
-                        fragmentoData.getDate()
-                );
+
+
 
 
 
@@ -66,10 +60,7 @@ public class Fragmento1 extends Fragment {
                 Log.d("prints", "botão hora");
                 FragmentoTimePicker fragmentoTime = new FragmentoTimePicker();
                 fragmentoTime.show(getParentFragmentManager(), "timePicker");
-                TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg4);
-                if (txt != null) txt.append(
-                        fragmentoTime.getTime()
-                );
+
 
             }
         });
@@ -82,9 +73,11 @@ public class Fragmento1 extends Fragment {
             public void onClick(View view) {
                 Log.d("prints", "descrição");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
-                if (txt != null) txt.append(
+
+                if (txt != null) txt.setText(
                         String.valueOf(texto1.getText())
                 );
+
                 Log.d("prints", "Descrição: " + texto1.getText());
             }
         });
@@ -100,10 +93,12 @@ public class Fragmento1 extends Fragment {
 
                 Log.d("prints", "botao Ok");
                 TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
+                TextView data = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg3);
+                TextView hora = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg4);
+                Compromisso r = new Compromisso("aaaaa", "bbbbb", "ccccc");
+                //mCompromissoDB.addCompromisso(r); // adiciona o comprimisso ao banco de dados
 
-                txt.setTextColor(Color.BLACK);
 
-                Log.d("prints", "Cheguei: ");
 
             }
         });
@@ -115,7 +110,5 @@ public class Fragmento1 extends Fragment {
         return descricao;
     }
 
-    public void setDescription(String descricao) {
-        this.descricao = String.valueOf(descricao);
-    }
+
 }

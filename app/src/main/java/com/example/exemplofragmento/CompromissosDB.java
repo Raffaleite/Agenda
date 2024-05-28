@@ -19,19 +19,18 @@ public class CompromissosDB {
         mDatabase = new CompromissosDBHelper(mContext).getWritableDatabase();
     }
 
-    private static ContentValues getValoresConteudo(FragmentoDatePicker q, FragmentoTimePicker p){
+    private static ContentValues getValoresConteudo(Compromisso r){
         ContentValues valores = new ContentValues();
 
         // pares chave-valor: nomes das colunas - valores
-        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.DATA, q.getDate());
-        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.HORA,p.getTime());
-//        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.DESCRICAO, d);
+        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.DATA, r.getDate());
+        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.HORA, r.getTime());
+        valores.put(CompromissosDBSchema.CompromissosTbl.Cols.DESCRICAO, r.getDescription());
         return valores;
     }
 
-    public void addComprimisso(FragmentoDatePicker q, FragmentoTimePicker p){
-        ContentValues valores = getValoresConteudo(q, p);
-        Log.d("prints", "Cheguei: " +  q);
+    public void addCompromisso(Compromisso r){
+        ContentValues valores = getValoresConteudo(r);
         mDatabase.insert(CompromissosDBSchema.CompromissosTbl.NOME, null, valores);
     }
 

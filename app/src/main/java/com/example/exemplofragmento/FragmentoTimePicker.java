@@ -2,6 +2,7 @@ package com.example.exemplofragmento;
 
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -38,16 +39,15 @@ public class FragmentoTimePicker extends DialogFragment
         hora = hour;
         minuto = minute;
 
-        TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
+        TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg4);
         //inserir hora no banco
 
         if (txt != null){
             time = String.valueOf(hora) +
                     ":" + String.valueOf(minuto);
 
-            txt.append(" ");
-            txt.append(time);
-            txt.append(" ");
+            txt.setTextColor(Color.BLACK);
+            txt.setText(time);
 
             Log.d("prints", "Horário: " + time);
 

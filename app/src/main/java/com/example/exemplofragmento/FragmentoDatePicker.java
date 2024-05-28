@@ -46,7 +46,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
         ano = year;
 
 
-        TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
+        TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg3);
         //inserir no banco a data
 
         if (txt != null) {
@@ -54,8 +54,8 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
             data = String.valueOf(dia) +
                     "/" + String.valueOf(mes) +
                     "/" + String.valueOf(ano);
-            txt.setText("");
-            txt.setTextColor(Color.argb(0,0,0,0));
+            txt.setTextColor(Color.BLACK);
+            txt.setText(data);
 
             Log.d("prints", "Data: " + data);
 

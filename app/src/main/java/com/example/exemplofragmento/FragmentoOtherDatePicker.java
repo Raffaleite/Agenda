@@ -66,8 +66,4 @@ public class FragmentoOtherDatePicker extends DialogFragment implements DatePick
         return otherData;
     }
 
-    public void setOtherDate(int data) {
-        this.otherData = String.valueOf(data);
-    }
-
 }
