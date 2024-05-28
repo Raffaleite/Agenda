@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
 import java.util.Calendar;
@@ -17,9 +18,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
     int dia, mes, ano;
     String data;
 
-    private View v;
-
-
+    @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Use the current date as the default date in the picker
@@ -33,32 +32,30 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
 
     }
 
-
-
-
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        //Log.d("Data", "Ano: "+String.valueOf(year));
-        //Log.d("Data", "Mês: "+String.valueOf(month+1));
-        //Log.d("Data", "Dia: "+String.valueOf(day));
+        Log.d("Data", "Ano: "+ year);
+        Log.d("Data", "Mês: "+ (month + 1));
+        Log.d("Data", "Dia: "+ day);
         dia = day;
         mes = month + 1;
         ano = year;
 
-
-        TextView txt = (TextView) Fragmento2.frgto2.findViewById(R.id.texto_frg2);
-        //inserir no banco a data
+        TextView txt = Fragmento2.frgto2.findViewById(R.id.texto_frg2);
 
         if (txt != null) {
 
-            data = String.valueOf(dia) +
-                    "/" + String.valueOf(mes) +
-                    "/" + String.valueOf(ano);
-            txt.setText("");
+            data = dia + "/" + mes + "/" + ano;
+
+            this.setDate(data);
+
+            txt.setText(" ");
             txt.setTextColor(Color.argb(0,0,0,0));
+            txt.append(" ");
+            txt.append(this.getDate());
+            txt.append(" ");
 
-            Log.d("prints", "Data: " + data);
-
+            Log.d("prints", "Data: " + this.getDate());
         }
     }
 
@@ -67,6 +64,7 @@ public class FragmentoDatePicker extends DialogFragment implements DatePickerDia
         return data;
     }
 
-
-
+    public void setDate(String data) {
+        this.data = data;
+    }
 }
